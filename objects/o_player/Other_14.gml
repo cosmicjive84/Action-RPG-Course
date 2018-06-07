@@ -21,6 +21,7 @@ if animation_hit_frame(3)
 	{
 		image_speed = _bow_speed;
 		audio_play_sound(a_swipe, 2, false);
+		
 		/// Create Arrow
 		var _arrow = instance_create_layer(x, y, "Instances", o_arrow);
 		_arrow.direction = direction_facing_*90;

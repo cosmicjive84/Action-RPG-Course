@@ -17,7 +17,8 @@ enum player {
 	bomb,
 	bow,
 	found_item,
-	hit
+	hit,
+	block
 }
 
 enum dir {
@@ -35,6 +36,7 @@ enum action {
 starting_state_ = player.move;
 state_ = starting_state_;
 action_ = noone;
+blocking_ = false;
 
 // Player movement lookup table
 sprite_[player.move, dir.right] = s_player_run_right;
@@ -71,3 +73,8 @@ sprite_[player.bomb, dir.right] = s_player_run_right;
 sprite_[player.bomb, dir.up] = s_player_run_up;
 sprite_[player.bomb, dir.left] = s_player_run_right;
 sprite_[player.bomb, dir.down] = s_player_run_down;
+
+sprite_[player.block, dir.right] = s_player_run_right;
+sprite_[player.block, dir.up] = s_player_run_up;
+sprite_[player.block, dir.left] = s_player_run_right;
+sprite_[player.block, dir.down] = s_player_run_down;
